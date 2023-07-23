@@ -14,7 +14,7 @@ class Character {
 
   Character.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    name = json[''];
+    name = json['name'];
     statusIfDeadOrAlive = json['status'];
     species = json['species'];
     type = json['type'];

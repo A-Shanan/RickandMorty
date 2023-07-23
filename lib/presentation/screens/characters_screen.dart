@@ -28,10 +28,11 @@ class _CharacterScreenState extends State<CharacterScreen> {
       appBar: AppBar(
         backgroundColor: MyColors.myYellow,
         title: const Text(
-          'Characters',
+          'Characterss',
           style: TextStyle(color: MyColors.myGrey),
         ),
       ),
+      body: buildBlocWidget(),
     );
   }
 
@@ -80,8 +81,11 @@ class _CharacterScreenState extends State<CharacterScreen> {
       shrinkWrap: true,
       physics: const ClampingScrollPhysics(),
       padding: EdgeInsets.zero,
+      itemCount: allCharacters.length,
       itemBuilder: (ctx, index) {
-        return const CharacterItem();
+        return CharacterItem(
+          character: allCharacters[index],
+        );
       },
     );
   }
