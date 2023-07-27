@@ -1,4 +1,5 @@
 import 'package:bloc_training/business_logic/cubit/characters_cubit.dart';
+import 'package:bloc_training/data/models/characters.dart';
 import 'package:bloc_training/data/repository/characters_repository.dart';
 import 'package:bloc_training/data/web_services/characters_web_services.dart';
 import 'package:bloc_training/presentation/screens/characters_details.dart';
@@ -24,12 +25,15 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (BuildContext context) => charactersCubit,
-            child: CharacterScreen(),
+            child: const CharacterScreen(),
           ),
         );
       case characterDetailsScreen:
+        final character = settings.arguments as Character;
         return MaterialPageRoute(
-            builder: (_) => const CharacterDetailsScreen());
+            builder: (_) => CharacterDetailsScreen(
+                  character: character,
+                ));
     }
   }
 }

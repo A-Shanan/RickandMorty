@@ -15,7 +15,7 @@ class BreakingBadApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Breaking Bad Characters',
+      title: 'Rick & Morty Characters',
       debugShowCheckedModeBanner: false,
       onGenerateRoute: appRouter.generateRoute,
     );
